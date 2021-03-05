@@ -1,13 +1,13 @@
-/// <reference path="./eyes.ts" />
+/// <reference path="./eyes.d.ts" />
 
 export default class Eyes {
   /**
    * Create Eyes instance.
-   * @example 
+   * @example
    * const eyes = new Eyes();
   */
   constructor(prop?: {configPath?: string})
-  
+
   /**
    * Create an Applitools test.
    * This will start a session with the Applitools server.
@@ -18,14 +18,14 @@ export default class Eyes {
 
   /**
    * Generate a screenshot of the current page and add it to the Applitools Test.
-   * @example 
+   * @example
    * await eyes.checkWindow()
    *
    * OR
    *
    * await eyes.checkWindow({
    *  target: 'region',
-   *  selector: '.my-element' 
+   *  selector: '.my-element'
    * });
   */
   checkWindow(config: Eyes.Testcafe.CheckOptions | string): Promise<any>
@@ -40,7 +40,7 @@ export default class Eyes {
    * Wait until all tests in the fixture are completed and return their results.
    * Note that if you don't wait for the tests to be completed then in case of a visual test failure, eyes cannot fail the fixture.
    * it is recommended to wait for the results in the testcafe after() hook.
-   * 
+   *
    * @example await eyes.close()
   */
   waitForResults(rejectOnErrors?:boolean): Promise<any[]>
